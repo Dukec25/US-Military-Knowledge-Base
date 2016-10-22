@@ -27,12 +27,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#currentStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#currentStatus"/>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheLeaderOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
     </owl:ObjectProperty>
     
 
@@ -43,6 +50,39 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Alive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alive">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Status"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Dead -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Dead">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Status"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Status -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Status"/>
     
 
 
@@ -160,6 +200,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Commando -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commando">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Company -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company">
@@ -263,6 +311,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Engineer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engineer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant">
@@ -287,10 +351,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Machine_Gunner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Machine_Gunner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Medic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Medic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
     </owl:Class>
     
 
@@ -356,6 +436,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier">
@@ -404,6 +492,26 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Chris_Kyle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Chris_Kyle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper"/>
+        <Dead></Dead>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // General axioms
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -431,6 +539,16 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_General"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commando"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engineer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Medic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
