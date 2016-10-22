@@ -32,6 +32,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheLeaderOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
     </owl:ObjectProperty>
     
 
@@ -40,6 +41,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheLeaderOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
     </owl:ObjectProperty>
     
 
@@ -58,6 +60,44 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Battalion -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battalion">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">300</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1000</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_Colonel"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -66,6 +106,30 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Brigade -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Brigade">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battalion"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battalion"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Colonel"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -99,6 +163,45 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Company -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Platoon"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Platoon"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">62</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">190</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Captain"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -107,6 +210,31 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Corps -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Corps">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Division"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:maxQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Division"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_General"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -115,6 +243,21 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Division -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Division">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Brigade"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -155,6 +298,45 @@
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Platoon -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Platoon">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Squad"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Squad"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">16</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">44</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
@@ -236,6 +418,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Corps"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Division"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Platoon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Squad"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
