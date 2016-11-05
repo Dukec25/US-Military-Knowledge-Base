@@ -1,0 +1,10 @@
+Changqi Du 20508921 
+Difei Zhang 20530592
+
+a) our domain is world war 2 military infomation( information about the size of battle group, heros in each country, /todo . We decide to create a new QA system as we are very interested in the history of world war 2. We plan to build some QA system hopefully can be deployed in some war history museum and answer questions from tourists and visitors. 
+
+b) The strategy we used is to start from a very small part of the big picture. Our original idea is just to create a simple QA system can explain the structure of modern US Army like how many Battalions an army contains. 
+
+We first pull some battle group infomation from the Internet. Then we realized we can do a lot more with this info. It happenes that both of us is interested with history of world war two. We decide to modify the QA system so that it can answer things related with WW2. Then we start to add class like country, hero. So that we can answer some question like "who is the sniper killed 309 soliders". Then we come up with the idea that it makes more interesting if we can answer questions about the actual battle happened in the ww2. Like this, we slowly build up our ontology and keep making modifications. For example, we removed the equipment classs. 
+
+One of the difficulty we encountered is that everytime we try to expand our domain. It's very difficult for us to figure out the relationship between 
