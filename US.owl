@@ -33,6 +33,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasTheMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasTheMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheMemberOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy">
@@ -47,6 +57,14 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheLeaderOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheMemberOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
     </owl:ObjectProperty>
     
@@ -101,6 +119,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
     
 
 
@@ -286,6 +310,12 @@
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
     
 
 
@@ -514,12 +544,116 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#America -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#America">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Canada -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Canada">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#China -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#China">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Chris_Kyle -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Chris_Kyle">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper"/>
         <Dead></Dead>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#France">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Germany -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Germany">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Italy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Italy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Japan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Japan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Soviet_Union -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soviet_Union">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
+        <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#douglas_macarthur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#douglas_macarthur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
     </owl:NamedIndividual>
     
 
