@@ -33,6 +33,56 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasAttackingSide -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasAttackingSide">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasSideInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDefendingSide"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDefendingSide -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDefendingSide">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasSideInfo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasParticipant">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isParticipantOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasSideInfo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasSideInfo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasTheMember -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasTheMember">
@@ -50,6 +100,15 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheLeaderOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#isParticipantOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isParticipantOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
     </owl:ObjectProperty>
     
 
@@ -109,6 +168,35 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasCombatantKillCount">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Status"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasEndDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasEndDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasStartDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasStartDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
@@ -178,6 +266,15 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Battle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege"/>
     </owl:Class>
     
 
@@ -335,17 +432,33 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasEndDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasStartDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A major land-engagement between opposing armies.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Engineer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engineer">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Type"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Equipment -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Equipment"/>
     
 
 
@@ -394,6 +507,12 @@
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_General">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Location"/>
     
 
 
@@ -462,6 +581,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Siege">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
     </owl:Class>
     
 
@@ -725,14 +852,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Medic"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Equipment"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
