@@ -56,7 +56,9 @@
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheEnemyOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheEnemyOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheEnemyOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -538,6 +540,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Alliance"/>
+        <isTheEnemyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
     </owl:NamedIndividual>
     
 
@@ -604,6 +607,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Isoroku_Yamamoto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Isoroku_Yamamoto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Japan"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Italy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Italy">
@@ -618,6 +631,16 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Japan">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
         <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Jodl_Alfred -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Jodl_Alfred">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Germany"/>
     </owl:NamedIndividual>
     
 
@@ -642,11 +665,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Zhang_Zizhong -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Zhang_Zizhong">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#China"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#douglas_macarthur -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#douglas_macarthur">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#America"/>
     </owl:NamedIndividual>
     
 
