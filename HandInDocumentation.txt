@@ -1,0 +1,3 @@
+a) our domain is world war 2 military infomation( information about the size of battle group, heros in each country, the . We decide to create a new QA system as we are very interested in the history of world war 2. We plan to build some QA system hopefully can be deployed in some war history museum and answer questions from tourists and visitors. 
+
+b) The strategy we used is to start from a very small part of the big picture. We first pull some battle group infomation from the Internet. 
