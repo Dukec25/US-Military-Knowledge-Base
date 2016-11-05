@@ -689,6 +689,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#BattleOfDunkirk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#BattleOfDunkirk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battle"/>
+        <hasParticipant rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#FrenchDunkirkTestArmy"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain">
@@ -721,6 +730,14 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#France">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
         <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#FrenchDunkirkTestArmy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#FrenchDunkirkTestArmy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army"/>
     </owl:NamedIndividual>
     
 
