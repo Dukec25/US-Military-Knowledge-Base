@@ -1,0 +1,11 @@
+step1:
+1. the domain is the world war 2 military information
+(battle group, heros, military ranks, countries, military unit)
+
+2. the kind of questions will be like 
+What's the rank of the leader of a battalion?
+Who is the main general of US army? 
+3. World war 2 military enthusiasts
+
+step2:
+The ontology will include the information on the size of battle group, who lead the group, who is the hero during world war 2,  countries win or lose the battle, which countries are in alliance, what type of weapons military units use. 
