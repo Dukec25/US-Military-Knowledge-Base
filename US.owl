@@ -748,6 +748,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#BattleOfTheBulge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#BattleOfTheBulge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
+        <hasLocation rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Ardennes"/>
+        <hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1945-01-25T23:59:59Z</hasEndDate>
+        <hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1944-12-16T00:00:00Z</hasStartDate>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Britain">
