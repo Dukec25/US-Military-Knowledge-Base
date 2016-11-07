@@ -11,12 +11,4 @@ To find the kind of information to include, we looked up some battle group infom
 
 
 
-One of the difficulty we encountered is that everytime we try to expand our domain. It's very difficult for us to figure out the structure and relationship between old stuff and newly added stuff. I believe if we have a very clear image on what our QA system is at the very beginnning. Then there should be a more organized way for structuring. 
-
-The strategy we used is to list all the interesting facts and classes, and try to make use of them to create new class and instance. Like we see the general class, that reminds me of the famous US general douglas macarthur. And thus create new class hero, and other objects property and data property. We keep building the ontology and then arrange the structure of classes at the end. 
-
-
-
-how we used OntoGraph (tools) (protege specific)
-
-- we added property assertions in different ways to test the inverse functions.. (e.g. hasParticipant vs isParticipantOf)
+During development, we often used DL Query in protege to sanity check the reasoning in our ontology. We would look up queries like "isParticipantOf some Siege" to make sure that the relationships between armies and engagements are correct and to make sure for example that SiegeOfLeningrad is correctly labelled as a Siege (we asserted that it is an Engagement but it fits the definition of a Siege). Often we find that synchronizing the reasoner and observing the inferred properties on instances is helpful enough. For instance, we would often test if inverse functions are inferred properly by asserting for example the hasParticipant property and observing if the isParticipantOf property is correctly inferred from the other object. We didn't find the OntoGraf tool to be too useful but it was a cool tool that allows us to visualize our hard work and was a motivating factor. In terms of difficulties encountered, one of the difficulties is that every time we try to expand our domain it's difficult for us to figure out the structure and relationship between the existing stuff and newly added stuff. I believe if we have a very clear image on what our QA system is at the very beginnning. Then there should be a more organized way for structuring. Also, we felt a bit limited by our lack of mastery of ontologies since we only knew how to define similar properties as shown in the tutorial. Sometimes we felt the need to define more complex properties such as ones that can be inferred from other properties but we did not know how to do so. Thus, thinking about what useful information our system can provide given our limited tools also became part of our process.
