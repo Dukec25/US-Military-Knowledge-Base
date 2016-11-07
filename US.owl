@@ -23,7 +23,10 @@
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+    </owl:ObjectProperty>
     
 
 
@@ -88,6 +91,16 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isTheMemberOf"/>
         <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#serves"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Type"/>
     </owl:ObjectProperty>
     
 
@@ -198,6 +211,16 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasDate"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Engagement"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#hasPopulation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasPopulation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>During world war II, the populations are cities are not very stable, so the value recorded here only reflects a certain point in time during the war. We should keep population figures by date, but that is quite complicated so we will approximate and just use on value instead.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -355,9 +378,7 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Commander"/>
     
 
 
@@ -511,9 +532,7 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Hero"/>
     
 
 
@@ -561,6 +580,29 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Machine_Gunner">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#MajorCity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#MajorCity">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#hasPopulation"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500000</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#City"/>
     </owl:Class>
     
 
@@ -621,12 +663,6 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
     
 
 
-    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank"/>
-    
-
-
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant">
@@ -661,7 +697,7 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soldier">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Rank"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     </owl:Class>
     
 
@@ -705,9 +741,7 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Type"/>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
     
 
 
@@ -834,6 +868,14 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#GeneralInfantryType -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeneralInfantryType">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler">
@@ -894,6 +936,7 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Leningrad">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#City"/>
+        <hasPopulation rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800000</hasPopulation>
     </owl:NamedIndividual>
     
 
@@ -947,6 +990,15 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army"/>
         <isLeadedBy rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler"/>
         <isParticipantOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#SiegeOfLeningrad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht58thInfantryDivision -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht58thInfantryDivision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Division"/>
+        <hasType rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeneralInfantryType"/>
     </owl:NamedIndividual>
     
 
