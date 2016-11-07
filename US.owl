@@ -687,7 +687,9 @@
 
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Type"/>
+    </owl:Class>
     
 
 
@@ -786,6 +788,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#ErnstBusch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#ErnstBusch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <isTheLeaderOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht16thArmy"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Germany"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#France -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#France">
@@ -799,6 +811,15 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#FrenchDunkirkTestArmy">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+        <serves rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Germany"/>
     </owl:NamedIndividual>
     
 
@@ -876,6 +897,7 @@
         <hasAttackingSide rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Axis_Powers"/>
         <hasDefendingSide rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
         <hasLocation rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Leningrad"/>
+        <hasParticipant rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht16thArmy"/>
         <hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1944-01-27T23:59:59Z</hasEndDate>
         <hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1941-09-08T00:00:00Z</hasStartDate>
     </owl:NamedIndividual>
@@ -887,6 +909,24 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Soviet_Union">
         <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Country"/>
         <isTheMemberOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Allies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht16thArmy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht16thArmy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht18thArmy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Wehrmacht18thArmy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army"/>
+        <isLeadedBy rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#GeorgVonKuchler"/>
+        <isParticipantOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#SiegeOfLeningrad"/>
     </owl:NamedIndividual>
     
 
