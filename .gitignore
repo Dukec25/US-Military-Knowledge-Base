@@ -1,0 +1,9 @@
+*.o
+*.exe
+*.d
+*.aux
+*.fls
+*.log
+*.gz
+*.fdb_latexmk
+*.stackdump
