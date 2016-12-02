@@ -114,7 +114,7 @@
   	\begin{enumerate}
   		\item
   		We plan to research natural language resource issues. 
-      Our goal is to extend our ontology using Leixon entries, NL Names and Sentence Plans.
+      Our goal is to extend our ontology using Lexicon entries, NL Names and Sentence Plans.
   		We would like to explore text generation using NL resources, and the effect of of enriching these resources 
       on the generated text.
   		We will be documenting our steps and results throughout this process so that we have sufficient information 
@@ -128,21 +128,107 @@
       the types of army men taking part in the war.
 
   		\item
-      We do not plan to use any existing ontologies. However we plan to use the sample Natural Language resources as a
-      guide while creating our own. This will serve as a benchmark for enriching our resources.
+      We do not plan to use any existing ontologies. However we plan to use the sample Harry Potter ontology, and its 
+      associated Natural Language resources as a guide while creating our own. 
+      This will serve as a benchmark for enriching our pwn natural language resources. 
+      We also plan to use the \textit{'Generating Natural Language Descriptions from OWL Ontologies: the NaturalOWL System'} 
+      document to further our understanding of the NaturalOWL System.
 
   		\item
-      We plan to create the following extensions to the natural language resources.
+      We plan to be able to form fluent sentences about different armies, the battles they took part in, and different
+      army units.
+      If possible, these sentences would be interesting as well, but that also depends on the amount of information
+      present in the ontology.
+      This will be achieved by creating lexicon entries for the required nouns, verbs and adjectives.
+      Following this, we will create NL names for certain lexicon entries, and connect them to classes and individuals.
+      Finally, we will create sentence plans, connect them to object properties, and assess the effect of these changes 
+      on the generated text.
+
+      The above steps will be carried out for each sentence, or topic that we wish to generate fluent text for.
+      During this process, we will constantly compare and iterate on our changes.
+      This will enable us to view the results of each change, as well as find the best option out of multiple choices
+      of generated text.
 
   		\item
       We will test the effect of adding more sentence plans and other natural language resources on the generated text.
-      Our hypotheses is that an increase in the natural language resources should lead to a more fluent and gramatically
+      Our hypotheses is that an increase in the natural language resources should lead to more fluent and gramatically
       accurate text.    
-      These resources should help form proper sentences with pronouns and be similar to language used in daily life.
+      These resources should help form proper sentences with pronouns and be somewhat similar to language used in 
+      daily life.
   		
   	
   	\end{enumerate}
   
+  \pagebreak
+
   \section*{Description of Parts Implemented}
+
+    We started our experiments with generating text for the Wehermacht 18th Army. 
+    We found that using a maximum graph distance of 2 generated text with richer content compared to a graph distance of 1.
+    One of the problems we faced initially was that inferred object properties did not show up in the generated text. 
+    In order to solve this problem, we asserted a couple of previously inferred properties.
+    We also had trouble figuring out how to generate text with the correct article before it. 
+    We solved this by creating articles in NL names, and connecting these NL names to individuals or classes.
+
+    \vspace{4mm}
+
+    \noindent
+    We followed the plan as described above, beginning with creation of lexicons and NL names.
+    After linking each NL name to an individual or class, we tested its effect on text generation.
+    This iterative process was useful in debugging, since we forgot to add the connection to a certain class a couple of
+    times. (Clicking on the class from the NL names connectiong dialog does not add the connection ! You need to click 
+    on the + button !)
+
+    \vspace{4mm}
+
+    \noindent
+    Once we added in the required lexicons and NL names for a sentence, we create a sentence plan, and connected the plan
+    to an object property. A few times, this gave us some interesting results. 
+    For example, if the gender of an inanimate object, was left at the default Masculine/Feminine setting,
+    the sentence plan would replace the property owner with \textit{he/she} in the generated text. 
+    This resulted in some pretty funny sentences which made no sense at all !
+
+    \vspace{4mm}
+
+    \noindent
+    During this process of enriching our natural language resources, we found that we could not use the same name for
+    the lexicon entry and the NL name. 
+    We also made good use of the 'duplicate' feature, which enabled us to easily replicate similar lexicon entries or
+    NL names.
+    Initially, we used strings within Sentence plans for certain verbs which had to be modified from the object property.
+    However, we realized that adding those verbs to the lexicon entries, and utilizing the system provided toBEVLE
+    would make our NL resources more extensible.
+    So, we added in more verbs to our Lexicon, to make it easier to understand and reuse.
+
+    \vspace{4mm}
+
+    \noindent
+    During the process of forming accurate sentences for Wehermacht's 18th Army, we found that each successive addition
+    to the NL resources, enriched our generated text.
+    It added more fluency and grammatical correctness to the text.
+    Our ontology was based on World War 2, so we also had to modify the default isASPEN sentence plan, to reflect the
+    correct tense in the text generated.
+
+    \vspace{4mm}
+
+    \noindent
+    Once we generated text for the Wehermacht 18th Army, we followed the same process as above for the other armies.
+    We then moved on to enriching the resources for the different engagement instances since they had more interesting
+    information.
+    We were able to add a number of sentence plans, lexicons, and NL names in this process.
+    We were also able to rearrange our sentence plan from the defualt order, to form more gramatically accurate sentences.
+    The \textit{Siege of Leningrad} in particular gave us some really interesting information compared to other instances.
+
+    \vspace{4mm}
+
+    \noindent
+    Finally, we added natural language resources for the different types of units.
+    This was interesting because we had focused on individuals before, but we were now working with classes.
+    Since constraints on these classes were part of the generated text, we tried to add resources which
+    would potray them in an accurate manner.
+    However, we still left with some funny sentences, caused by universal and existential constraints.
+    Overall, we managed to implement all the parts of the plan as envisioned, and
+    learned a lot about language and the difficulties involved in NLG.
+
 
 \end{document}
