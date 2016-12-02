@@ -301,15 +301,15 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Army">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
-                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Corps"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
             </owl:Restriction>
         </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#consistOf"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Corps"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#General"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
@@ -370,6 +370,13 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Brigade">
         <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Colonel"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -384,13 +391,6 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Colonel"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
         <nlowl:hasNLName rdf:resource="http://www.aueb.gr/users/ion/nlowl/dgr#brigade"/>
@@ -443,13 +443,6 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
 
     <owl:Class rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Captain"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
@@ -464,6 +457,13 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#isLeadedBy"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Captain"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/duke/ontologies/2016/9/US#Unit"/>
         <nlowl:hasNLName rdf:resource="http://www.aueb.gr/users/ion/nlowl/dgr#company"/>
@@ -1099,6 +1099,18 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Captain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Colonel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_Colonel"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_General"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Battalion"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Brigade"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Company"/>
@@ -1116,18 +1128,6 @@ Note: it&apos;s not always clear who won an engagement as &quot;winning&quot; ca
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Infantry"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Medic"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sniper"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Captain"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Colonel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_Colonel"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Lieutenant_General"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Major_General"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/duke/ontologies/2016/9/US#Sergeant"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
